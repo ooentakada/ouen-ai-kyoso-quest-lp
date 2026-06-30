@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>全国！応援AI共創クエスト｜出版共創プロジェクト</title>
+<style>
+  :root{
+    --orange:#d8243c; --coral:#e23a4f; --deep:#2a1612; --navy:#8b0a1f;
+    --cream:#FFF8F2; --soft:#fbe9ec; --gold:#ffd54f; --ink:#33363F;
+    --line:#ecd8da; --green:#2E9E6B; --shadow:0 10px 30px rgba(139,10,31,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);line-height:1.85;background:var(--cream);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  h2{font-size:1.55rem;line-height:1.4;color:var(--navy);margin-bottom:8px;letter-spacing:.01em}
+  h3{font-size:1.15rem;color:var(--deep);margin:18px 0 8px}
+  p{margin:10px 0}
+  strong{font-weight:700;color:var(--ink);
+    background:linear-gradient(transparent 56%, var(--gold) 56%, var(--gold) 92%, transparent 92%);
+    padding:0 .12em}
+  .hero strong,.party strong,.closing strong,.goal strong{background:none;padding:0}
+  .sec{padding:54px 0}
+  .sec:nth-child(even){background:#fff}
+  .eyebrow{display:inline-block;font-size:.82rem;font-weight:700;color:var(--orange);
+    letter-spacing:.12em;margin-bottom:10px}
+  .hero{background:linear-gradient(160deg,#d8243c 0%,#8b0a1f 100%);color:#fff;
+    padding:70px 0 60px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 10%,rgba(255,255,255,.18),transparent 45%);pointer-events:none}
+  .hero h1{font-size:2.15rem;line-height:1.35;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.12);position:relative}
+  .hero .lead{font-size:1.05rem;margin-top:14px;opacity:.97;position:relative}
+  .hero .title-tag{display:inline-block;margin-top:22px;padding:8px 20px;border:1.5px solid rgba(255,255,255,.7);
+    border-radius:40px;font-weight:700;font-size:1rem;letter-spacing:.03em;position:relative}
+  .hero .sub{font-size:.95rem;margin-top:18px;opacity:.95;position:relative}
+  .earlybird{position:relative;margin:24px auto 0;max-width:560px;background:rgba(255,255,255,.96);
+    color:var(--deep);border-radius:14px;padding:14px 18px;font-weight:700;font-size:.95rem;
+    box-shadow:var(--shadow);line-height:1.6}
+  .earlybird b{color:var(--orange)}
+  .btn{display:inline-block;background:#fff;color:var(--orange);font-weight:800;font-size:1.05rem;
+    padding:16px 38px;border-radius:50px;text-decoration:none;margin-top:24px;position:relative;
+    box-shadow:0 8px 22px rgba(0,0,0,.18);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-o{background:linear-gradient(135deg,var(--orange),var(--gold));color:#fff}
+  .btn-line{display:block;text-align:center;margin:14px auto 0;max-width:420px}
+  .note{background:var(--soft);border-left:5px solid var(--orange);border-radius:0 12px 12px 0;
+    padding:16px 20px;margin:18px 0;font-size:.97rem}
+  .quote{background:#fff;border:1px dashed var(--coral);border-radius:14px;padding:18px 22px;
+    margin:18px 0;color:var(--navy);font-weight:600}
+  ul.tick{list-style:none;margin:14px 0}
+  ul.tick li{position:relative;padding:6px 0 6px 30px}
+  ul.tick li::before{content:"✓";position:absolute;left:0;top:6px;color:var(--green);font-weight:900}
+  .rounds{display:grid;gap:14px;margin-top:18px}
+  .round{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+  .round .n{display:inline-block;background:var(--orange);color:#fff;font-weight:800;font-size:.8rem;
+    padding:3px 12px;border-radius:30px;margin-bottom:6px}
+  .round.now{border:2px solid var(--orange);background:var(--soft)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+  .stat{background:var(--navy);color:#fff;border-radius:14px;padding:18px 10px;text-align:center}
+  .stat .big{font-size:1.5rem;font-weight:800;color:#FFD9A8;display:block}
+  .stat .lbl{font-size:.78rem;opacity:.9;margin-top:4px}
+  .goal{text-align:center;background:linear-gradient(135deg,var(--navy),#a30b22);color:#fff;
+    border-radius:18px;padding:30px 22px;margin-top:10px}
+  .goal .hl{font-size:1.7rem;font-weight:800;color:#FFD9A8;display:block;margin:6px 0}
+  .cyclebar{text-align:center;background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:16px;margin:16px 0;box-shadow:var(--shadow);font-weight:700;color:var(--navy);font-size:.95rem;line-height:2}
+  .cyclebar .arw{color:var(--orange);font-weight:900}
+  .eb-box{background:linear-gradient(135deg,#FFF1DA,#ffe7cf);border:2px solid var(--gold);
+    border-radius:18px;padding:26px 24px;text-align:center;box-shadow:var(--shadow)}
+  .eb-box .deadline{display:inline-block;background:var(--orange);color:#fff;font-weight:800;
+    padding:5px 16px;border-radius:30px;font-size:.85rem;margin-bottom:10px}
+  .card{background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:26px 24px;margin:20px 0;
+    border:1px solid var(--line);position:relative}
+  .card.main{border:2.5px solid var(--orange)}
+  .card .ribbon{position:absolute;top:-13px;left:24px;background:var(--orange);color:#fff;
+    font-weight:800;font-size:.78rem;padding:5px 16px;border-radius:30px}
+  .card .pname{font-size:1.25rem;font-weight:800;color:var(--navy)}
+  .card .price{font-size:1.9rem;font-weight:800;color:var(--orange);margin:4px 0 2px}
+  .card .price small{font-size:.95rem;color:#888;font-weight:600}
+  .card .pos{color:#666;font-size:.92rem;margin-bottom:6px}
+  .mini-h{font-weight:800;color:var(--deep);margin:16px 0 4px;font-size:1rem;
+    border-bottom:2px solid var(--soft);padding-bottom:4px}
+  .smallcards{display:grid;gap:14px;margin-top:4px}
+  .sc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .sc .pname{font-weight:800;color:var(--navy);font-size:1.05rem}
+  .sc .price{color:var(--orange);font-weight:800}
+  .tablewrap{overflow-x:auto;margin:16px 0;border-radius:14px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:520px;background:#fff;font-size:.9rem}
+  th,td{padding:11px 12px;text-align:center;border-bottom:1px solid var(--line)}
+  th{background:var(--navy);color:#fff;font-weight:700}
+  td:first-child{text-align:left;font-weight:600;color:var(--deep)}
+  tr:nth-child(even) td{background:#FFFaf5}
+  .yes{color:var(--green);font-weight:800}
+  .no{color:#ccc}
+  .party{background:linear-gradient(135deg,#8b0a1f,#d8243c);color:#fff;border-radius:18px;padding:30px 24px}
+  .party h2{color:#fff}
+  .party ul.tick li::before{color:#FFD9A8}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:4px 18px}
+  .faq summary{font-weight:700;color:var(--navy);cursor:pointer;padding:12px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"Q ";color:var(--orange);font-weight:900}
+  .faq p{padding:0 0 12px;font-size:.95rem}
+  .closing{background:var(--navy);color:#fff;text-align:center}
+  .closing h2{color:#fff}
+  .closing .big{font-size:1.5rem;font-weight:800;color:#FFD9A8;margin:18px 0}
+  .ask{background:rgba(255,255,255,.1);border-radius:14px;padding:18px 20px;margin-top:18px;font-weight:600}
+  .ctas{margin-top:24px;display:flex;flex-direction:column;gap:12px;align-items:center}
+  .footer{text-align:center;font-size:.8rem;color:#9a8f8a;padding:24px;background:var(--cream);line-height:1.9}
+  .footer a{color:var(--orange)}
+  .ph{background:#fff3cd;color:#8a6d1b;padding:0 5px;border-radius:4px;font-size:.92em;font-weight:600}
+  @media(max-width:560px){.hero h1{font-size:1.7rem}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <h1>人が集まる人になる。<br>人が集まる場を、全国に。</h1>
+    <p class="lead">応援とAIと共創があふれる世界へ。</p>
+    <span class="title-tag">〜 全国！応援AI共創クエスト 〜</span>
+    <p class="sub">9月2日の出版前に、47都道府県に仲間がいる状態をつくる。</p>
+    <div class="earlybird">📣 <b>【7月10日まで】</b>お申し込みの方を、本の巻末に「協力者」としてお名前掲載<br><span style="font-size:.85rem;font-weight:600">（約50名・2口以上の方を優先）</span></div>
+    <a href="#join" class="btn">仲間になる（1口5冊／¥20,000）</a>
+  </div>
+</header>
+
+<!-- 0. 初出版 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">FIRST BOOK</span>
+    <h2>高田、初めての本を出します</h2>
+    <p>このたび、高田洋平が<strong>初めての商業出版</strong>をします。</p>
+    <p>応援と共創があふれる社会。心躍り狂う社会。それを本気で目指して、いまやれることを全力でやっていきたい。<strong>その想いに、賛同してくれる仲間と一緒に届けたい。</strong></p>
+    <h3>この本のテーマ</h3>
+    <p>今回の本は、<strong>「人の巻き込み方」「協力の集め方」「シナジーの起こし方」を体系化した一冊</strong>です。2021年からワークショップを作り続けてきた、その集大成。</p>
+    <div class="quote">「一人で頑張る」「一人で抱え込む」——そんな人を、どう救うか。それを真正面から書きました。</div>
+    <p>このメッセージに共感してくれる方には、ぜひ一緒に広めてほしい。そして広める過程で、<strong>あなた自身がより応援されるように、人を集められるように</strong>なってもらえたら、こんなに嬉しいことはありません。</p>
+    <p>もう、一人で頑張らなくていい。みんなで一緒に、楽しく、ワクワクしながら。<strong>AIも活用して、賢くやっていきませんか。</strong></p>
+  </div>
+</section>
+
+<!-- 1. 何をするか -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">WHAT WE DO</span>
+    <h2>人が集まる人を増やし、全国にシナジーを巻き起こす</h2>
+    <p>このプロジェクトでやりたいのは、<strong>人が集まる人を全国に増やし、シナジーを巻き起こしていくこと。</strong>本を買って、おしまいにしません。</p>
+    <ul class="tick">
+      <li>誰かに本を届ける人になる</li>
+      <li>仲間をつくる人になる</li>
+      <li>読書会・勉強会・作業会・ワークショップを開く人になる</li>
+      <li>地域でもオンラインでも、人が集まる場を立ち上げる人になる</li>
+      <li>AIを活かして、もっと賢く・ラクに人を集める人になる</li>
+      <li>高田を呼び水に、自分の活動や専門性を広げる人になる</li>
+    </ul>
+    <p>そして、<strong>あなた自身が「人が集まる人」になっていく。</strong></p>
+    <p>でも、それだけじゃありません。<strong>あなたが旗を上げる。あなたが場を作る。あなたが動く。</strong>——その行動に、周りの人が影響を受け、価値を感じ、応援と共創が生まれる。誰かとの化学反応が、また次の化学反応を呼んでいく。</p>
+    <div class="quote">あなたが動くことで、あなたの周りの人まで、どんどんハッピーになっていく。<br>一人ひとりの挑戦が連鎖して加速し、その輪が全国に広がっていく。<br>それが、この本のテーマであり、このプロジェクトの本質です。</div>
+  </div>
+</section>
+
+<!-- 1.5 順番が逆 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">MINDSET</span>
+    <h2>「人が集まる人」になるのを、待たなくていい</h2>
+    <p>よく勘違いされるんですが、順番は逆です。</p>
+    <div class="quote"><strong>「人が集まる人になったから、人が集まる」</strong>んじゃない。<br><strong>「場を作る。仕掛ける。動く。」</strong>——だからこそ、人がどんどん集まっていく。</div>
+    <p>特別な才能やカリスマは要りません。小さくても場を作って、仕掛ける。その<strong>行動</strong>が、あなたを「人が集まる人」にしていきます。このプロジェクトは、その<strong>「仕掛ける」を全力でサポート</strong>します。</p>
+    <div class="cyclebar">
+      <span class="eyebrow" style="display:block;margin-bottom:6px">応援共創循環モデル</span>
+      関係性の質 <span class="arw">→</span> 思考の質 <span class="arw">→</span> 行動の質 <span class="arw">→</span> 結果の質 <span class="arw">↺</span> さらに信頼と応援
+    </div>
+    <p>成功は、関係の質から始まります。冊数を増やすことが目的じゃない。本をきっかけに関係性の質を高めて、挑戦と成果が生まれる循環を、全国に広げていきます。</p>
+  </div>
+</section>
+
+<!-- 2. 3周ストーリー -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">THE QUEST</span>
+    <h2>全国を3周する物語｜今回は、その「1周目」</h2>
+    <p><strong>全国！応援AI共創クエスト</strong>は、全国を3周する物語です。</p>
+    <div class="rounds">
+      <div class="round now"><span class="n">1周目・今ここ</span><div><strong>出会いを広げる。</strong>全国で仲間と出会い、種をまく</div></div>
+      <div class="round"><span class="n">2周目</span><div><strong>各地で、小さく仕掛ける。</strong>出会った仲間と、小さな場・企画を立ち上げる</div></div>
+      <div class="round"><span class="n">3周目</span><div><strong>大きく仕掛ける。</strong>各地のうねりを束ねて、大きなムーブメントに</div></div>
+    </div>
+    <div class="note">いま募集しているのは、その<strong>1周目＝出会いのフェーズ</strong>。だからこそ、<strong>今から関わってくれる人が「最初の仲間」</strong>になります。</div>
+  </div>
+</section>
+
+<!-- 3. 感謝 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">THANK YOU</span>
+    <h2>ここまで来られたのは、みなさんのおかげです</h2>
+    <div class="stats" style="grid-template-columns:repeat(2,1fr)">
+      <div class="stat"><span class="big">4,500人</span><span class="lbl">Claude Code実践会・Aiport</span></div>
+      <div class="stat"><span class="big">250人超</span><span class="lbl">BOOSTERメンバー</span></div>
+    </div>
+    <p>Claude Code実践会・Aiportは、今や<strong>4,500人規模</strong>に。BOOSTERメンバーも<strong>250人</strong>を超えました。</p>
+    <p>ここまでやってこられたのは、本当に、応援してくれた<strong>みなさんの声のおかげ</strong>です。心から感謝しています。</p>
+    <p>そしてこれから、もっとブーストして、この<strong>和（輪）を全国へ広げていきたい。</strong>その想いを込めて、この出版共創プロジェクトを始めます。</p>
+  </div>
+</section>
+
+<!-- 4. メソッド全部 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">ALL METHODS</span>
+    <h2>関わってくれる人に、メソッドを全部お渡しします</h2>
+    <p>僕はこれまで、こんな場づくりをしてきました。</p>
+    <div class="stats">
+      <div class="stat"><span class="big">7,500人</span><span class="lbl">オンラインイベント最高</span></div>
+      <div class="stat"><span class="big">1,000人</span><span class="lbl">リアルイベント規模</span></div>
+      <div class="stat"><span class="big">約6,000人</span><span class="lbl">2026年4月・1ヶ月で集めた</span></div>
+    </div>
+    <p>この「人が集まる場のつくり方」「巻き込み方」、そして<strong>AIの活かし方</strong>のエッセンスとメソッドを、<strong>本来はBOOSTERメンバーに有料で公開しているものも含めて、今回関わってくれる人には全部お渡しします。</strong></p>
+    <p>人が集まる人になりたい。一人で抱え込みたくない。人が集まる場を作りたい。人を巻き込んで何かを仕掛けたい。AIを使いこなせるようになりたい。——そんな方は、ぜひ<strong>自分の好きな関わり方</strong>で参加してください。</p>
+  </div>
+</section>
+
+<!-- 5. 目標 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">GOAL</span>
+    <h2>目指すのは、47都道府県・100人の主催者・100人の運営共創メンバー</h2>
+    <div class="goal">
+      目指せ、<span class="hl">47都道府県。<br>100人の主催者と、100人の運営共創メンバー。</span>
+      <p style="opacity:.92">9月2日の出版前までに、全国に——人が集まる場を仕掛ける<strong style="color:#FFD9A8">主催者（2口）を100人</strong>、それを支え一緒に動く<strong style="color:#FFD9A8">運営共創メンバー（1口）を100人</strong>つくる。</p>
+    </div>
+    <p style="text-align:center;margin-top:16px">高田ひとりで全国を回るんじゃなくて、各地に一緒に仕掛けてくれる仲間をつくる。<br><strong>1冊の本を、全国の場づくりに変えていく。</strong></p>
+    <div class="note" style="text-align:center">🗾 <span class="ph">47都道府県マップ：県が埋まっていくビジュアル（制作予定）</span></div>
+  </div>
+</section>
+
+<!-- 限定性 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">ONCE ONLY</span>
+    <h2>なぜ、この内容を、この金額で？</h2>
+    <p>正直にお伝えします。僕は、<strong>場の作り方・集客の仕方を「仕事」として</strong>やっています。</p>
+    <p>本来であれば、このメソッドを伝授したり、僕自身が全国を回ってあなたの企画を応援したり、PRして歩いたり——こうしたことを、<strong>1口2万円という金額で提供することはありません。</strong></p>
+    <p>それでも今回やりたいのは、理由があります。僕自身、たくさんの場を主催してきました。だから、<strong>主催する人の大変さも、その価値も、痛いほど分かっています。</strong>主催してくれる人、運営を支えてくれる人——そういう人がいるからこそ、場が生まれ、人が集まる。<strong>そういう人たちを、本気で応援したい。</strong>だから、この形でやります。</p>
+    <div class="note" style="border:2px solid var(--navy);border-left:6px solid var(--navy);background:#fff;text-align:center">
+      <p style="margin:4px 0">今回は、<strong>初めての出版</strong>という、人生で一度きりのタイミング。</p>
+      <p style="margin:6px 0;font-size:1.12rem"><strong>この内容・この金額・僕自身が全力で応援するこの形は、最初で最後です。</strong></p>
+    </div>
+    <p>「出版を、全国の仲間と一緒に迎えたい」——その想いだけで、特別に開いた機会です。</p>
+  </div>
+</section>
+
+<!-- 早期申込特典 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="eb-box">
+      <span class="deadline">7月10日まで</span>
+      <h2 style="text-align:center">本の巻末に、あなたのお名前を</h2>
+      <p>お申し込みいただいた方を、書籍の巻末に<strong>「協力者」としてお名前掲載</strong>します。</p>
+      <p style="font-weight:700">掲載枠は<strong>約50名まで</strong>／<strong>2口以上の方を優先</strong></p>
+      <p>初めての本の、最初のページから最後のページまで。<br><strong>出版の歴史に、あなたの名前を一緒に刻みませんか。</strong></p>
+      <a href="#join" class="btn btn-o">7月10日までに申し込む</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. おすすめ -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">FOR YOU</span>
+    <h2>こんな方におすすめ</h2>
+    <div class="smallcards">
+      <div class="sc">
+        <div class="pname">🏠 コミュニティや「人が集まる場」を主催している人</div>
+        <p style="font-size:.93rem;margin:6px 0">高田を呼ぶことで、あなたのコミュニティがより活性化。みんなが協力し合い、アクティブになります。「呼んでよかった」と<strong>めちゃくちゃ感謝される</strong>——そして<strong>人が人を呼ぶ</strong>流れが生まれます。</p>
+      </div>
+      <div class="sc">
+        <div class="pname">🤝 そういう主催者・場づくりの人と繋がっている人</div>
+        <p style="font-size:.93rem;margin:6px 0">ぜひ高田を呼んでください。あなたの<strong>紹介</strong>が、みんなの挑戦を加速させます。</p>
+      </div>
+      <div class="sc">
+        <div class="pname">📣 集客・キャンペーン・応援クラファンで盛り上げたい人</div>
+        <p style="font-size:.93rem;margin:6px 0">切り口として<strong>「集客セミナー」</strong>も開けます。応援クラウドファンディング・キャンペーン・集客で盛り上げたい人に、すごく喜んでもらえる内容です。</p>
+      </div>
+      <div class="sc">
+        <div class="pname">🚀 これから挑戦したい人／ビジョンに人を巻き込みたい人</div>
+        <p style="font-size:.93rem;margin:6px 0">「応援して」と一人ではなかなか言えない——そんな人も大丈夫。<strong>高田が応援団になります。</strong>だから、人を巻き込みやすくなります。</p>
+      </div>
+      <div class="sc">
+        <div class="pname">🏪 お店や場を持っている人・知っている人（飲食店・コワーキング等）</div>
+        <p style="font-size:.93rem;margin:6px 0">リアルな場があれば、そこで読書会・交流会・AI作業会。<strong>あなたのお店・場の集客や盛り上げ</strong>に高田を活かせます。場を持つ人を知っている方は、ぜひ繋いでください。</p>
+      </div>
+      <div class="sc">
+        <div class="pname">🎁 挑戦している誰かに、プレゼントしたい人</div>
+        <p style="font-size:.93rem;margin:6px 0">このリターンは、<strong>ギフトにもなります。</strong>人を巻き込む挑戦をしている大切な人へ、<strong>「高田を贈る」</strong>。応援の、最高のプレゼントです。</p>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:.93rem;color:#777">そのほか：集客・運営（RSM）を学びたい人／AIで賢く人を集めたい人／一人で抱え込まず楽しく仕掛けたい人／高田と一緒に企てたい人。</p>
+  </div>
+</section>
+
+<!-- 7. 口数メニュー -->
+<section class="sec" id="join">
+  <div class="wrap">
+    <span class="eyebrow">MEMBERSHIP</span>
+    <h2>仲間になる方法｜口数メニュー</h2>
+    <p>基本は <strong>1口＝5冊／¥20,000</strong>。大事なのは——<strong>1口でも2口でも、「集客」「イベント運営」「AIの活かし方」が学べること。</strong></p>
+
+    <!-- 1口 -->
+    <div class="card">
+      <div class="pname">★ 1口｜応援共創アンバサダー <small>（運営メンバー）</small></div>
+      <div class="price">¥20,000 <small>／5冊</small></div>
+      <div class="pos">出版を応援しながら、「人が集まる人」になる土台が手に入る入口。</div>
+      <ul class="tick">
+        <li><strong>1口以上の特別グループに招待</strong>（主催者・応援共創に興味がある仲間と繋がれる）</li>
+        <li><strong>RSM（リアクションストーリーマーケティング）</strong>のやり方を学べる</li>
+        <li><strong>イベントの主催・運営の仕方</strong>を学べる</li>
+        <li><strong>応援シェアキット（AIツール）</strong>をプレゼント</li>
+        <li><strong>出版記念パーティーに特別価格で参加できる参加券</strong></li>
+        <li><strong>希望者限定・オリジナル応援Tシャツ</strong>（高田が地域に伺った際に直接<strong>手渡し</strong>／難しい場合は配送）</li>
+        <li><strong>出版の裏側も、このプロジェクトの裏側も全部公開</strong>（運営メンバー限定）</li>
+        <li>応援企画・イベント情報の先行案内／（希望者）名前掲載</li>
+      </ul>
+      <a href="#cta" class="btn btn-o" style="display:block;text-align:center">1口で運営メンバーになる</a>
+    </div>
+
+    <!-- 2口 -->
+    <div class="card main">
+      <span class="ribbon">★ いちばんのおすすめ</span>
+      <div class="pname">★★ 2口｜主催チャレンジメンバー <small>（仕掛け人メンバー）</small></div>
+      <div class="price">¥40,000 <small>／10冊</small></div>
+      <div class="pos">10冊をきっかけに、一緒に「人が集まる場」を仕掛ける人。地域でもオンラインでもOK。</div>
+      <ul class="tick"><li><strong>1口（運営メンバー）の特典すべて</strong>（特別グループ・RSM・AIキット・パーティー特別価格券・応援Tシャツ 含む）</li></ul>
+
+      <div class="mini-h">あなたの企画に、高田を自由に使えます</div>
+      <ul class="tick">
+        <li>読書会・勉強会・ワークショップ</li>
+        <li>Claude Code実践会などの<strong>AI作業会</strong></li>
+        <li>あなたの企画の作戦会議</li>
+        <li>あなたがメインの企画の<strong>ファシリ／ナビ役</strong></li>
+        <li><strong>ただの飲み会でもOK</strong>（一緒に企てる仲間として）</li>
+        <li>→ さらに<strong>企画の告知も高田が協力</strong></li>
+      </ul>
+
+      <div class="mini-h">自由に主催・自由にマネタイズOK</div>
+      <ul class="tick">
+        <li><strong>参加費の設定もマネタイズも自由</strong>。あなたの企画として進めてOK</li>
+        <li>主催の時期も自由（出版前でも後でも・時期は要相談）</li>
+      </ul>
+
+      <div class="mini-h">一人にしない、つなぐサポート</div>
+      <ul class="tick">
+        <li><strong>運営メンバーとのマッチング・人の紹介</strong></li>
+        <li>不安な人には<strong>壁打ちサポーターを紹介・ご縁つなぎ</strong></li>
+      </ul>
+
+      <div class="mini-h">主催メンバーの基本特典</div>
+      <ul class="tick">
+        <li>主催企画を告知できる（<strong>BOOSTER内＋高田のSNS・メルマガでも告知</strong>）／告知文テンプレ・企画フォーマット</li>
+        <li><strong>47都道府県マップに主催チャレンジメンバーとして掲載</strong></li>
+        <li>高田が地域に行く際の優先相談／2口専用グループ／月1回の主催者作戦会議</li>
+      </ul>
+
+      <div class="note"><b>高田の全国訪問について</b><br>宿泊費・交通費は<strong>まずは不要</strong>（呼んでくれたらできる限り行きます）。ビジネス化・マネタイズできたら多少のご配慮は歓迎（任意）。主催する人を本気で応援する仕組みをつくります。</div>
+      <a href="#cta" class="btn btn-o" style="display:block;text-align:center">2口で主催チャレンジする</a>
+    </div>
+
+    <!-- 4口/10口/20口 -->
+    <h3 style="margin-top:30px">もっと深く関わりたい人へ</h3>
+    <div class="smallcards">
+      <div class="sc">
+        <div class="pname">★★★ 4口｜企画プロデュースメンバー <span class="price">¥80,000／20冊</span></div>
+        <p style="font-size:.93rem;margin:6px 0">2口の「主催チャレンジ」を、高田の個別サポートで本格的な企画に育てる枠。</p>
+        <ul class="tick">
+          <li>2口の特典すべて</li>
+          <li><strong>高田の個別相談（コンサル）つき</strong>——あなたの企画を1対1でじっくり</li>
+          <li><strong>ゲスト紹介</strong>——企画にゲストを呼びたいとき、高田が紹介・お繋ぎ</li>
+        </ul>
+      </div>
+      <div class="sc">
+        <div class="pname">10口｜出版共創スポンサー <span class="price">¥200,000／50冊</span></div>
+        <p style="font-size:.93rem;margin:6px 0">あなた主催の場に、高田をゲストとして巻き込める公式コラボ企画枠。</p>
+      </div>
+      <div class="sc">
+        <div class="pname">共創パートナー｜スポンサー <span class="price">20口〜／100冊〜</span></div>
+        <p style="font-size:.93rem;margin:6px 0">20口以上は、高田と一緒にこの場を全国へ広げる<strong>共創パートナー</strong>枠。</p>
+        <ul class="tick">
+          <li><strong>高田の全国行脚の旅の中で、あなたのサービス・活動をPRして歩きます</strong></li>
+          <li>自分のサービスを高田にPRしてほしい人／会社・団体・地域単位で広げたい人へ</li>
+        </ul>
+        <p style="font-size:.93rem;margin:6px 0">個別にご提案します。<strong>お気軽にご相談ください。</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. 比較表 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">COMPARE</span>
+    <h2>1口・2口で手に入るもの</h2>
+    <p>「応援するだけ」じゃない。<strong>あなたが人を集められるようになる。</strong></p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>　</th><th>1口<br>運営メンバー</th><th>2口<br>主催メンバー</th></tr>
+        <tr><td>価格</td><td>¥20,000<br>(5冊)</td><td>¥40,000<br>(10冊)</td></tr>
+        <tr><td>特別グループ招待</td><td class="yes">◎</td><td class="yes">◎＋専用</td></tr>
+        <tr><td>RSM（集客）を学べる</td><td class="yes">◎</td><td class="yes">◎</td></tr>
+        <tr><td>イベント運営を学べる</td><td class="yes">◎</td><td class="yes">◎</td></tr>
+        <tr><td>応援シェアキット(AI)</td><td class="yes">◎</td><td class="yes">◎</td></tr>
+        <tr><td>パーティー特別価格参加券</td><td class="yes">◎</td><td class="yes">◎</td></tr>
+        <tr><td>オリジナル応援Tシャツ（手渡し）</td><td class="yes">◎ 希望者</td><td class="yes">◎ 希望者</td></tr>
+        <tr><td>自分のイベント主催</td><td class="no">—</td><td class="yes">◎</td></tr>
+        <tr><td>参加費・マネタイズ自由</td><td class="no">—</td><td class="yes">◎</td></tr>
+        <tr><td>高田を自由に使える</td><td class="no">—</td><td class="yes">◎</td></tr>
+        <tr><td>企画の告知を高田が協力</td><td class="no">—</td><td class="yes">◎</td></tr>
+        <tr><td>運営メンバーとのマッチング</td><td class="no">—</td><td class="yes">◎</td></tr>
+        <tr><td>壁打ちサポーター紹介</td><td class="no">—</td><td class="yes">◎</td></tr>
+        <tr><td>47都道府県マップ掲載</td><td class="no">—</td><td class="yes">◎</td></tr>
+      </table>
+    </div>
+    <p style="text-align:center"><strong>1口・2口から、集客もイベントも学べて、実践できるようになる。</strong></p>
+  </div>
+</section>
+
+<!-- 9. 一人で頑張らない -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">SUPPORT</span>
+    <h2>2口は、一人で頑張らない仕組みがあります</h2>
+    <ul class="tick">
+      <li><strong>3人の応援チームをつくる</strong>（声かけ係・場づくり係・発信係）</li>
+      <li>10冊で仲間をつくるワークシート／2口専用グループ／月1回の主催者作戦会議</li>
+      <li>テンプレート＆AIプロンプト集（応援シェアキット）で告知も準備もラクに</li>
+      <li>主催応援チーム（BOOSTERのイベント経験者）が壁打ち・応援</li>
+      <li>運営メンバーとのマッチングで、一緒に動く仲間が見つかる</li>
+      <li><strong>あなたの企画には高田も入る</strong>（集客・ファシリ・作戦会議）</li>
+    </ul>
+    <div class="quote">一人で頑張るんじゃなくて、本をきっかけに仲間を増やしながら、地域でもオンラインでも、小さな応援共創の場をつくっていきましょう。</div>
+  </div>
+</section>
+
+<!-- 10. 購入方法 -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow">PAYMENT</span>
+    <h2>購入方法｜1口 ¥20,000</h2>
+    <p><strong>事務局購入：1口 ¥20,000</strong>　含まれるもの：書籍5冊／国内送料／サイン本対応などの事務局特典／各口数のメンバー特典。</p>
+    <p>シンプルに、1口2万円から。手間なくまとめて応援できます。</p>
+  </div>
+</section>
+
+<!-- 11. パーティー -->
+<section class="sec">
+  <div class="wrap">
+    <div class="party">
+      <span class="eyebrow" style="color:#FFD9A8">FINALE</span>
+      <h2>ゴールは、9月26日の出版記念講演会＆パーティー</h2>
+      <ul class="tick">
+        <li>100〜200人規模のリアル開催（講演会はハイブリッド配信）</li>
+        <li>全国のアンバサダーお披露目／47都道府県マップ達成発表</li>
+        <li>各地の主催企画の成果報告／高田の全国ツアー（2周目）宣言</li>
+      </ul>
+      <p><strong style="color:#FFD9A8">1口・2口メンバーは、このパーティーに特別価格で参加できます。</strong></p>
+      <p>9月2日に出版して、9月26日に全国の仲間で集大成を祝う。「パーティーで、全国の仲間として紹介される」——そんなゴールを、一緒に目指しませんか。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12. FAQ -->
+<section class="sec faq">
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h2>よくある質問</h2>
+    <details><summary>どんな本ですか？</summary><p>「人の巻き込み方」「協力の集め方」「シナジーの起こし方」を体系化した本です。2021年から続けてきたワークショップの集大成で、「一人で頑張る・一人で抱え込む」人をどう救うかを書いています。</p></details>
+    <details><summary>募集はいつまでですか？</summary><p>2026年7月1日〜<strong>9月1日（出版前まで）</strong>。47都道府県の枠が埋まり次第、早めに締め切る場合があります。</p></details>
+    <details><summary>本（5冊・10冊）は、どう使えばいいですか？</summary><p>ご自由に。読書会で使う・仲間に配る・大切な人にプレゼント、など。使いきれない分は<strong>こちらで活用します</strong>（書店への展開・寄贈・イベントでの配布など）のでご安心ください。</p></details>
+    <details><summary>主催ってハードル高くないですか？</summary><p>大丈夫です。一人で頑張らない仕組み（応援チーム・テンプレ・作戦会議・運営メンバーとのマッチング）に加えて、あなたの企画には高田も集客・ファシリ・作戦会議で入ります。まず3人の仲間をつくるところから。</p></details>
+    <details><summary>主催の時期はいつがいいですか？</summary><p>あなたのタイミングでOK。出版前でも後でも構いません。時期はお気軽にご相談ください。</p></details>
+    <details><summary>主催イベントで参加費を取ってもいい？</summary><p>はい。参加費の設定もマネタイズも自由です。あなたの企画として進めてください。</p></details>
+    <details><summary>オンラインでも主催していい？</summary><p>もちろんです。2口メンバーは地域でもオンラインでもどちらで主催してもOK。</p></details>
+    <details><summary>RSMって何ですか？</summary><p>リアクションストーリーマーケティング。人の反応を集めて物語にし、人が自然に集まる発信のやり方です。1口以上のメンバーにお伝えします。</p></details>
+    <details><summary>高田は必ず地元に来てくれますか？</summary><p>呼んでくれたらできる限り行きます。宿泊費・交通費はまずは不要。2口は「必ず行く権利」ではなく「高田を呼び水に自分の地域やオンラインで場を開く主催チャレンジ権」です（オンラインなら全国どこでも）。</p></details>
+    <details><summary>本の巻末に名前を載せてもらえるって本当？</summary><p>はい。7月10日までにお申し込みの方を、書籍の巻末に「協力者」としてお名前掲載します。約50名まで、2口以上の方を優先です。</p></details>
+    <details><summary>書店で買って応援することもできますか？</summary><p>はい、大歓迎です。書店で買っていただくと販売実績にも貢献できます（登録方法は別途ご案内）。</p></details>
+  </div>
+</section>
+
+<!-- 13. 最後に -->
+<section class="sec closing" id="cta">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#FFD9A8">JOIN US</span>
+    <h2>応援とAIと共創があふれる世界へ</h2>
+    <p>本を届けることは、関係性を届けること。本を配ることは、会話のきっかけを配ること。本を読むことは、挑戦が始まる場をつくること。</p>
+    <p class="big">人が集まる人になる。<br>人が集まる場を、全国に広げる。</p>
+    <p>9月2日を、全国に仲間がいる状態で迎える。その一歩を、あなたと一緒に。</p>
+    <div class="ask">🙏 <strong style="color:#fff">紹介のお願い</strong><br>あなたの周りに「人が集まる人になりたい」「人が集まる場を作りたい」——そんな方がいたら、ぜひこのプロジェクトを紹介してもらえたら嬉しいです。</div>
+    <div class="ctas">
+      <a href="#" class="btn">仲間になる（1口5冊／¥20,000）</a>
+      <a href="#" class="btn-line" style="color:#FFD9A8;font-weight:700;text-decoration:underline">まずは説明会に参加する</a>
+      <a href="#" class="btn-line" style="color:#FFD9A8;font-weight:700;text-decoration:underline">このプロジェクトを紹介する（シェア）</a>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  〔書名〕出版共創プロジェクト 〜全国！応援AI共創クエスト〜<br>
+  募集期間：2026年7月1日〜9月1日（枠が埋まり次第終了）<br>
+  運営：<span class="ph">〔運営者名・要確認〕</span>　|　<a href="#">特定商取引法に基づく表記</a>　|　<a href="#">プライバシーポリシー</a><br>
+  <span style="font-size:.92em">※このページは下書きです。<span class="ph">〔書名〕〔講演会会場〕〔パーティー特別価格〕〔各フォームURL〕〔マップ画像〕〔応援シェアキットの中身〕〔運営者名・特商法リンク〕</span>は確定後に差し替えます。</span>
+</div>
+
+</body>
+</html>
